@@ -5,22 +5,28 @@ import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
-@Table(name = "menu_items")
+@Table(name = "order_items")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class MenuItem {
+public class OrderItem {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
-    private String name;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "order_id", nullable = false)
+    @JsonIgnore
+    private Order order;
 
-    private String description;
+    @Column(nullable = false)
+    private Long menuItemId;
+
+    @Column(nullable = false)
+    private String itemName;
 
     @Column(nullable = false)
     private Double price;
@@ -28,13 +34,6 @@ public class MenuItem {
     @Column(nullable = false)
     private Integer quantity;
 
-    private String category;
-
-    @Builder.Default
-    private Boolean isAvailable = true;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "restaurant_id", nullable = false)
-    @JsonIgnore
-    private Restaurant restaurant;
+    @Column(nullable = false)
+    private Double subTotal;
 }

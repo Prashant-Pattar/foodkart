@@ -1,0 +1,502 @@
+{
+  "info": {
+    "_postman_id": "foodkart-system-apis-2026",
+    "name": "FoodKart APIs",
+    "description": "Complete Postman collection for FoodKart Machine Coding Application",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. User Management",
+      "item": [
+        {
+          "name": "Register User 1 (Prashant)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Prashant\",\n  \"gender\": \"MALE\",\n  \"phoneNumber\": \"9876543210\",\n  \"pinCode\": \"560001\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/v1/users/register",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "v1", "users", "register"]
+            }
+          }
+        },
+        {
+          "name": "Register User 2 (Priya)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Priya\",\n  \"gender\": \"FEMALE\",\n  \"phoneNumber\": \"9876543211\",\n  \"pinCode\": \"560002\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/v1/users/register",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "v1", "users", "register"]
+            }
+          }
+        },
+        {
+          "name": "Get User by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/users/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "v1", "users", "1"]
+            }
+          }
+        },
+        {
+          "name": "Get All Users",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/users",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "v1", "users"]
+            }
+          }
+        },
+        {
+          "name": "Update User Profile",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Prashant Pattar\",\n  \"pinCode\": \"560038\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/v1/users/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "v1", "users", "1"]
+            }
+          }
+        },
+        {
+          "name": "Delete User",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/users/2",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "v1", "users", "2"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "2. Restaurant Management",
+      "item": [
+        {
+          "name": "Register Restaurant 1 (Food Court)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Food Court\",\n  \"address\": \"MG Road\",\n  \"city\": \"Bangalore\",\n  \"maxCapacity\": 3,\n  \"serviceablePinCodes\": [\"560001\", \"560002\"],\n  \"menuItems\": [\n    {\n      \"name\": \"Burger\",\n      \"description\": \"Crispy Veg Burger\",\n      \"price\": 120.0,\n      \"quantity\": 15,\n      \"category\": \"Fast Food\"\n    },\n    {\n      \"name\": \"Pizza\",\n      \"description\": \"Farmhouse Cheese Pizza\",\n      \"price\": 280.0,\n      \"quantity\": 10,\n      \"category\": \"Italian\"\n    }\n  ]\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/v1/restaurants/register",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "v1", "restaurants", "register"]
+            }
+          }
+        },
+        {
+          "name": "Register Restaurant 2 (Spicy Kitchen)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Spicy Kitchen\",\n  \"address\": \"Indiranagar 100ft Rd\",\n  \"city\": \"Bangalore\",\n  \"maxCapacity\": 2,\n  \"serviceablePinCodes\": [\"560001\", \"560038\"],\n  \"menuItems\": [\n    {\n      \"name\": \"Burger\",\n      \"description\": \"Paneer Tikka Burger\",\n      \"price\": 150.0,\n      \"quantity\": 10,\n      \"category\": \"Fast Food\"\n    },\n    {\n      \"name\": \"Pizza\",\n      \"description\": \"Margherita Pizza\",\n      \"price\": 220.0,\n      \"quantity\": 8,\n      \"category\": \"Italian\"\n    }\n  ]\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/v1/restaurants/register",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "v1", "restaurants", "register"]
+            }
+          }
+        },
+        {
+          "name": "Update Restaurant Menu (Add Fries)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"items\": [\n    {\n      \"name\": \"French Fries\",\n      \"description\": \"Salted crispy fries\",\n      \"price\": 70.0,\n      \"quantity\": 25,\n      \"category\": \"Sides\"\n    }\n  ]\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/v1/restaurants/1/menu",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "v1", "restaurants", "1", "menu"]
+            }
+          }
+        },
+        {
+          "name": "Update Serviceable Pin Codes",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"serviceablePinCodes\": [\"560038\", \"560040\"]\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/v1/restaurants/1/pincodes",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "v1", "restaurants", "1", "pincodes"]
+            }
+          }
+        },
+        {
+          "name": "Get Restaurant by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/restaurants/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "v1", "restaurants", "1"]
+            }
+          }
+        },
+        {
+          "name": "Get All Restaurants",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/restaurants",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "v1", "restaurants"]
+            }
+          }
+        },
+        {
+          "name": "Search Restaurants (Strategy: HIGHEST_RATING)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/restaurants/search?pinCode=560001&strategy=HIGHEST_RATING&item=Burger",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "v1", "restaurants", "search"],
+              "query": [
+                {
+                  "key": "pinCode",
+                  "value": "560001"
+                },
+                {
+                  "key": "strategy",
+                  "value": "HIGHEST_RATING"
+                },
+                {
+                  "key": "item",
+                  "value": "Burger"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Search Restaurants (Strategy: LOWEST_PRICE)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/restaurants/search?pinCode=560001&strategy=LOWEST_PRICE&item=Pizza",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "v1", "restaurants", "search"],
+              "query": [
+                {
+                  "key": "pinCode",
+                  "value": "560001"
+                },
+                {
+                  "key": "strategy",
+                  "value": "LOWEST_PRICE"
+                },
+                {
+                  "key": "item",
+                  "value": "Pizza"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "3. Order Management",
+      "item": [
+        {
+          "name": "Place Order (Auto-select by LOWEST_PRICE)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"userId\": 1,\n  \"deliveryPinCode\": \"560001\",\n  \"selectionStrategy\": \"LOWEST_PRICE\",\n  \"items\": [\n    {\n      \"itemName\": \"Burger\",\n      \"quantity\": 2\n    }\n  ]\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/v1/orders/place",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "v1", "orders", "place"]
+            }
+          }
+        },
+        {
+          "name": "Place Order (Auto-select by HIGHEST_RATING)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"userId\": 1,\n  \"deliveryPinCode\": \"560001\",\n  \"selectionStrategy\": \"HIGHEST_RATING\",\n  \"items\": [\n    {\n      \"itemName\": \"Pizza\",\n      \"quantity\": 1\n    }\n  ]\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/v1/orders/place",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "v1", "orders", "place"]
+            }
+          }
+        },
+        {
+          "name": "Place Order (Direct Restaurant Selection)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"userId\": 1,\n  \"restaurantId\": 1,\n  \"items\": [\n    {\n      \"itemName\": \"Burger\",\n      \"quantity\": 1\n    }\n  ]\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/v1/orders/place",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "v1", "orders", "place"]
+            }
+          }
+        },
+        {
+          "name": "Update Order Status (DELIVERED)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"DELIVERED\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/v1/orders/1/status",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "v1", "orders", "1", "status"]
+            }
+          }
+        },
+        {
+          "name": "Get Order by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/orders/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "v1", "orders", "1"]
+            }
+          }
+        },
+        {
+          "name": "Get User Order History",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/orders/user/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "v1", "orders", "user", "1"]
+            }
+          }
+        },
+        {
+          "name": "Get Restaurant Orders",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/orders/restaurant/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "v1", "orders", "restaurant", "1"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "4. Reviews & Ratings",
+      "item": [
+        {
+          "name": "Submit Restaurant Review",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"userId\": 1,\n  \"restaurantId\": 1,\n  \"rating\": 5,\n  \"comment\": \"Delicious food, arrived piping hot!\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/v1/reviews",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "v1", "reviews"]
+            }
+          }
+        },
+        {
+          "name": "Get Restaurant Reviews",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/reviews/restaurant/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "v1", "reviews", "restaurant", "1"]
+            }
+          }
+        },
+        {
+          "name": "Get User Reviews",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/reviews/user/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "v1", "reviews", "user", "1"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
