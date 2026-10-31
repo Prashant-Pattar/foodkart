@@ -54,6 +54,9 @@ public class Order {
     @UpdateTimestamp
     private LocalDateTime updatedAt;
 
+    @OneToOne(mappedBy = "order", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private Delivery delivery;
+
     public void addOrderItem(OrderItem item) {
         orderItems.add(item);
         item.setOrder(this);
