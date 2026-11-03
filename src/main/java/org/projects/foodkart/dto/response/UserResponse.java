@@ -18,6 +18,7 @@ public class UserResponse {
     private String name;
     private Gender gender;
     private String phoneNumber;
+    private String email;
     private String pinCode;
     private LocalDateTime createdAt;
 
@@ -28,6 +29,7 @@ public class UserResponse {
                 .name(user.getName())
                 .gender(user.getGender())
                 .phoneNumber(user.getPhoneNumber())
+                .email(user.getEmail())
                 .pinCode(user.getPinCode())
                 .createdAt(user.getCreatedAt())
                 .build();

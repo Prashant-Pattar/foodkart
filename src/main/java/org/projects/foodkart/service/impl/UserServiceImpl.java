@@ -32,6 +32,7 @@ public class UserServiceImpl implements UserService {
                 .name(request.getName())
                 .gender(request.getGender())
                 .phoneNumber(request.getPhoneNumber())
+                .email(request.getEmail())
                 .pinCode(request.getPinCode())
                 .build();
 
@@ -79,6 +80,10 @@ public class UserServiceImpl implements UserService {
                 throw new BadRequestException("User already exists with phone number: " + newPhone);
             }
             user.setPhoneNumber(newPhone);
+        }
+
+        if (request.getEmail() != null && !request.getEmail().isBlank()) {
+            user.setEmail(request.getEmail().trim());
         }
 
         if (request.getPinCode() != null && !request.getPinCode().isBlank()) {

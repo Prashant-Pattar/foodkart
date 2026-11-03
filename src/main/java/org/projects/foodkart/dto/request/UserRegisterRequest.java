@@ -1,5 +1,6 @@
 package org.projects.foodkart.dto.request;
 
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
@@ -24,6 +25,10 @@ public class UserRegisterRequest {
     @NotBlank(message = "Phone number is required")
     @Pattern(regexp = "^[0-9]{10}$", message = "Phone number must be a valid 10-digit number")
     private String phoneNumber;
+
+    @NotBlank(message = "Email is required")
+    @Email(message = "Email should be valid")
+    private String email;
 
     @NotBlank(message = "Pin code is required")
     private String pinCode;
