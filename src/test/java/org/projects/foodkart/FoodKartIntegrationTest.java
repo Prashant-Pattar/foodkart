@@ -46,6 +46,7 @@ public class FoodKartIntegrationTest {
                 .name("Prashant")
                 .gender(Gender.MALE)
                 .phoneNumber("99" + uniqueSuffix)
+                .email("prashant" + uniqueSuffix + "@example.com")
                 .pinCode(testPinCode)
                 .build();
         UserResponse user = userService.registerUser(userRequest);
